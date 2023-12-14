@@ -26,7 +26,9 @@ function displayTemperature(response){
     let feelslikeElement=document.querySelector("#feelslike");
     let windElement=document.querySelector("#wind");
     let dateElement=document.querySelector("#date");
-
+    let iconElement=document.querySelector(
+        "#weather-icon"
+    )
     
     temperatureElement.innerHTML=Math.round(response.data.main.temp);
     CityElement.innerHTML=response.data.name;
@@ -36,6 +38,10 @@ function displayTemperature(response){
     windElement.innerHTML=Math.round(response.data.wind.speed);
     dateElement.innerHTML=formatDate(response.data.dt*1000);
 
+    iconElement.innerHTML= `<img
+                    class="icon"
+                    src="https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png";
+                  />`
 
 }
 // Loading default city (London) on page load
@@ -71,9 +77,6 @@ function handleSearchSubmit(event) {
         alert("Please enter a city");
     }
 }
-
-
-
 
 let searchFormElement =document.querySelector(".search-form"); 
 searchFormElement.addEventListener("submit", handleSearchSubmit);
