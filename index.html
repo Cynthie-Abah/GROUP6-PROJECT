@@ -25,7 +25,11 @@
                 class="search-form-input"
                 id="search-form-input"
               />
-              <input type="submit" value="search" class="search-form-button" />
+              <input
+                type="submit"
+                value="Get weather"
+                class="search-form-button"
+              />
             </form>
           </header>
           <div class="overview">
@@ -38,7 +42,10 @@
           <div class="main">
             <div class="left">
               <div class="clearfix weather-temperature">
-                <img src="src\sun.png" alt="clear" width="" />
+                <span id="weather-icon">
+                  <!----- <img src="src\sun.png" alt="clear" width="" />--->
+                </span>
+
                 <strong id="temperature"></strong
                 ><span class="units"> °C |<a href="#" id="fah">°F</a> </span>
               </div>
